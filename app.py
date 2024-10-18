@@ -5,7 +5,7 @@ from cryptography.hazmat.backends import default_backend
 
 app = Flask(__name__)
 
-# 256-bit AES key
+# custom key for encryption
 static_key = b'\x01\x23\x45\x67\x89\xab\xcd\xef\xfe\xdc\xba\x98\x76\x54\x32\x10' \
              b'\x01\x23\x45\x67\x89\xab\xcd\xef\xfe\xdc\xba\x98\x76\x54\x32\x10'
 
@@ -52,7 +52,7 @@ class LSBWithEncryption():
                 encoded.putpixel((col, row), (r, g, asc))
                 index += 1
         return encoded
-
+#function to decode
     def decode_image(self, img):
         width, height = img.size
         encrypted_msg = b""
@@ -67,7 +67,7 @@ class LSBWithEncryption():
                 index += 1
         decrypted_msg = self.decrypt_message(encrypted_msg)
         return decrypted_msg.decode()
-
+#function to encode
     def encode_image_rlsb(self, img, msg):
         encrypted_msg = self.encrypt_message(msg.encode())
         length = len(encrypted_msg)
