@@ -68,11 +68,3 @@ To extract the hidden data from a media file use the decoding button on same web
 3. **Steg Image Creation**: A steganographic image (or media file) is created with the embedded cipher text.
 
 ---
-
-
-## 🔧 Notes
-
-- The cryptographic algorithm used in this project is a custom implementation. You can replace it with other algorithms like **AES** or **RSA** if needed.
-- The **RLSB** technique is an enhancement of the traditional LSB method, introducing randomness to make detection harder.
-
----
